@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div align="center" style="padding-top: 100px">
-		<form action="09_bDeletePro.jsp" method="post">
+		<form action="boardDelete" method="post">
 			<div class="bs-docs-section">
 				<div class="row">
 					<div class="col-lg-12">

@@ -1,15 +1,11 @@
-
 package com.spring.boardEx02.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-
 import javax.inject.Inject;
-
 import org.springframework.stereotype.Service;
-
 import com.spring.boardEx02.dao.BoardDAO;
 import com.spring.boardEx02.dto.BoardDTO;
 
@@ -23,8 +19,6 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardDTO> getSearchBoard(Map<String, Object> searchInfo) throws Exception{
 		return boardDAO.getSearchBoard(searchInfo);
 	}
-	 
-	
 	
 	@Override
 	public BoardDTO getOneBoard(int num) throws Exception{
@@ -32,14 +26,10 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.getOneBoard(num);
 	}
 	
-	
-	
 	@Override
 	public void insertBoard(BoardDTO bdto) throws Exception {
 		boardDAO.insertBoard(bdto);
 	}
-
-	
 	
 	@Override
 	public boolean updateBoard(BoardDTO bdto) throws Exception {
@@ -50,8 +40,6 @@ public class BoardServiceImpl implements BoardService {
 		}
 		return isSuccess;
 	}
-
-	
 	
 	@Override
 	public boolean deleteBoard(BoardDTO bdto) throws Exception {
@@ -62,14 +50,11 @@ public class BoardServiceImpl implements BoardService {
 		}
 		return isSuccess;
 	}
-
-	
 	
 	@Override
 	public void makeDummyData() throws Exception {
 		
 		Random ran = new Random();
-		
 		List<BoardDTO> dummyDataList = new ArrayList<BoardDTO>();
 	
 		String[] word = {"가","나","다","라","마","바","사","아","자","차","카","타","파","하"};
@@ -92,9 +77,8 @@ public class BoardServiceImpl implements BoardService {
 				writer  += word[ran.nextInt(word.length)];
 				subject += word[ran.nextInt(word.length)];
 				content += word[ran.nextInt(word.length)];
-				if (j < 4) {
+				if (j < 4) 
 					email += word[ran.nextInt(word.length)];
-				}
 			}
 			email += "@gmail.com";
 			
@@ -111,26 +95,19 @@ public class BoardServiceImpl implements BoardService {
 			temp.setContent(content);
 			
 			dummyDataList.add(temp);
-			
 		}
 		
 		boardDAO.makeDummyData(dummyDataList);
-		
 	}
-
-	
 	
 	@Override
 	public int getAllBoardCount(Map<String, String> searchCountInfo) throws Exception {
 		return boardDAO.getAllBoardCount(searchCountInfo);
 	}
-
-	
 	
 	@Override
 	public void insertReplyBoard(BoardDTO bdto) throws Exception {
 		boardDAO.updateBoardReplyStep(bdto);
 		boardDAO.insertReplyBoard(bdto);
 	}
-	
 }

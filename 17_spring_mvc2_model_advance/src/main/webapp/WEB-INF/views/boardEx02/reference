@@ -7,7 +7,6 @@
 	
 
 	A안
-	
 	1. 먼저 순수한 CRUD 기능 구현 (list,info,insert,update,delete)
 	2. 검색 , 페이징기능 구현 
 	3. 계층형 댓글 구현
@@ -15,22 +14,13 @@
 	
 	
 	B안
-	
 	1. 계층형 댓글을 제외한 검색기능 , 페이징처리와 , 부트스트랩 , CRUD를 동시에 구현
 	2. 계층형 댓글 구현
 
 
-	
-	
-
-
-
 [ 데이터 베이스 셋업 관련 정보 ]
-
 CREATE DATABASE SPRING_BOARD_EX2;
-	
 USE SPRING_BOARD_EX2;
-
 CREATE TABLE BOARD(
 		NUM INT(10) NOT NULL PRIMARY KEY,
 	    WRITER VARCHAR(20),
@@ -44,16 +34,9 @@ CREATE TABLE BOARD(
 	    READ_COUNT INT(10),
 	    CONTENT VARCHAR(20)
 	);
-	
-	
-
-
-
 
 	
 [ 계층형 댓글 처리 관련 정보 ]
-
-
 num     : 게시글의 고유번호  ( 원본글과 댓글은 모두 num이 다르다. )
 ref     : 게시글의 그룹번호  ( 한 원본글과 그 아래 있는 댓글들은 모두 ref가 같다. )
 reLevel : 게시글의 계층 	 (주로 depth로 표현)
@@ -89,7 +72,3 @@ reStep : 한 게시글 그룹의 게시글 순서
 	> 댓글2-1						: num =  9 / ref = 2 / level = 2 / step = 2 
 		> 댓글 2-1-1				: num = 10 / ref = 2 / level = 3 / step = 3
 	> 댓글2-2						: num = 11 / ref = 2 / level = 2 / step = 4
-
-
-	
-	

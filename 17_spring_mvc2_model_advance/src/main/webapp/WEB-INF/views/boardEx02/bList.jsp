@@ -29,8 +29,6 @@
 			var searchWord = $("#searchWord").val();
 			location.href="boardList?onePageViewCount="+onePageViewCount+"&searchKeyword="+searchKeyword+"&searchWord="+searchWord;
 		});
-			
-		
 	});
 	
 </script>

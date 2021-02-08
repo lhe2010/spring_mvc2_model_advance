@@ -2,29 +2,25 @@ package com.spring.boardEx02.dao;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.inject.Inject;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-
 import com.spring.boardEx02.dto.BoardDTO;
 
 @Repository				
 public class BoardDAOImpl implements BoardDAO {
-
 	
 	@Inject							
 	private SqlSession session;		
 	
 	@Override
 	public List<BoardDTO> getSearchBoard(Map<String, Object> searchInfo) throws Exception{
-		return session.selectList("com.spring.mapper.BoardMapper.getSearchBoard",searchInfo);
+		return session.selectList("com.spring.mapper.BoardMapper.getSearchBoard", searchInfo);
 	}
 	
 	@Override
 	public int getAllBoardCount(Map<String, String> searchCountInfo) throws Exception {
-		return session.selectOne("com.spring.mapper.BoardMapper.getAllBoardCount" , searchCountInfo);
+		return session.selectOne("com.spring.mapper.BoardMapper.getAllBoardCount", searchCountInfo);
 	}
 	
 	@Override
@@ -71,7 +67,5 @@ public class BoardDAOImpl implements BoardDAO {
 	public void makeDummyData(List<BoardDTO> dataLists) throws Exception {
 		session.insert("com.spring.mapper.BoardMapper.makeDummyData" , dataLists);
 	}
-
-
 
 }

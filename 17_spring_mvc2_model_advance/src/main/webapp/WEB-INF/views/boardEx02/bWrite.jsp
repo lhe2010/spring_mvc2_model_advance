@@ -40,9 +40,7 @@
 			if (checkY) {
 				return true;
 			}
-					
 		});
-		
 	});
 </script>
 </head>
