@@ -43,7 +43,7 @@
 									<td colspan="4">
 										<input type="hidden" name="num" value="${bdto.num}" /> 
 										<input type="submit" class="btn btn-primary btn-sm" value="Modify" />
-										<input type="button" class="btn btn-primary btn-sm" onclick="location.href=boardList'" value="Main" />
+										<input type="button" class="btn btn-primary btn-sm" onclick="location.href='boardList'" value="Main" />
 									</td>
 								</tr>
 							</table>
@@ -53,7 +53,5 @@
 			</div>
 		</form>
 	</div>
-</body>
-</html>
 </body>
 </html>

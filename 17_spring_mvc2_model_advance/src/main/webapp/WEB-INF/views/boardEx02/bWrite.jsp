@@ -46,7 +46,7 @@
 </head>
 <body>
 	<div align="center" style="padding-top: 100px">
-		<form action="boardWrite"  method="post" ">
+		<form action="boardWrite"  method="post" >
 			<div class="bs-docs-section">
 				<div class="row">
 					<div class="col-lg-12">
