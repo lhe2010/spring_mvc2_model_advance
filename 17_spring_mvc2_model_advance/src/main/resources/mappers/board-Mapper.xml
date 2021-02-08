@@ -188,7 +188,7 @@
 				(SELECT 
 					MAX(NUM) + 1 
 				FROM 
-					BOARD AS NUM),
+					BOARD AS B),
 			    #{writer},
 			    #{email},
 			    #{subject},
